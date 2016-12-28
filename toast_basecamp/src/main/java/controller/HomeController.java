@@ -1,4 +1,4 @@
-package org.nhn.board;
+package controller;
 
 import java.text.DateFormat;
 import java.util.Date;

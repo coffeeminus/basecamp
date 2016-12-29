@@ -6,8 +6,8 @@
      
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://127.0.0.1/board_table"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1/board_db"/>
         <property name="username" value="root"/>
-        <property name="password" value="00"/>
+        <property name="password" value="0000"/>
     </bean>
 </beans>

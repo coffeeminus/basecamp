@@ -18,9 +18,8 @@
     </colgroup>
     <thead>
         <tr>
-            <th scope="col">글번호</th>
-            <th scope="col">제목</th>
-            <th scope="col">조회수</th>
+            <th scope="col">이메일</th>
+            <th scope="col">본문</th>
             <th scope="col">작성일</th>
         </tr>
     </thead>
@@ -29,10 +28,9 @@
             <c:when test="${fn:length(list) > 0}">
                 <c:forEach items="${list }" var="row">
                     <tr>
-                        <td>${row.IDX }</td>
-                        <td>${row.TITLE }</td>
-                        <td>${row.HIT_CNT }</td>
-                        <td>${row.CREA_DTM }</td>
+                        <td>${row.email }</td>
+                        <td>${row.text }</td>
+                        <td>${row.modTime }</td>
                     </tr>
                 </c:forEach>
             </c:when>

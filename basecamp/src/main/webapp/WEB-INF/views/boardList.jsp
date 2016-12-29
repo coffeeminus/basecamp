@@ -23,6 +23,7 @@
     </colgroup>
     <thead>
         <tr>
+        	<th scope="col">글번호</th>
             <th scope="col">이메일</th>
             <th scope="col">본문</th>
             <th scope="col">작성일</th>
@@ -33,6 +34,7 @@
             <c:when test="${fn:length(list) > 0}">
                 <c:forEach items="${list }" var="row">
                     <tr>
+                    	<td>${row.postId}</td>
                         <td>${row.email }</td>
                         <td>${row.text }</td>
                         <td>${row.modTime }</td>

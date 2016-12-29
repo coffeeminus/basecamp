@@ -4,7 +4,8 @@
 <mapper namespace="board">
 
 	<resultMap id="boardVO" type="board.vo.BoardVO">
-  		<id property="email" column="email" />
+		<id property="postId" column="post_id"/>
+  		<result property="email" column="email" />
   		<result property="pw" column="pw"/>
   		<result property="text" column="text"/>
   		<result property="modTime" column="mod_time"/>
@@ -13,7 +14,7 @@
 	<select id="selectPost" parameterType="board.vo.BoardVO" resultMap="boardVO">
 		select *
 		from board
-		where email= #{email}	
+		where post_id= #{postId}	
 	</select>
 
 	
@@ -25,6 +26,6 @@
 	</select>
 	
 	<insert id="writePost" parameterType="board.vo.BoardVO">
-		 insert into board (email, pw, text, mod_time) values (#{email}, #{pw}, #{text}, now())
+		 insert into board (post_id, email, pw, text, mod_time) values (null,#{email}, #{pw}, #{text}, now())
 	</insert>
 </mapper>

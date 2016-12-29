@@ -6,6 +6,7 @@ package board.vo;
  *
  */
 public class BoardVO {
+	private String postId;
 	private String email;
 	private String pw;
 	private String text;
@@ -25,6 +26,12 @@ public class BoardVO {
 	}
 	public String getText() {
 		return text;
+	}
+	public String getPostId() {
+		return postId;
+	}
+	public void setPostId(String postId) {
+		this.postId = postId;
 	}
 	public void setText(String text) {
 		this.text = text;

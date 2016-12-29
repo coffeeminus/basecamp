@@ -48,4 +48,8 @@ public class BoardController {
 		}		
 		return mv;
 	}	
+	@RequestMapping(value="/writePostForm.do")
+	public String writePostForm(){
+		return "writePostForm";
+	}
 }

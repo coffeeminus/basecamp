@@ -5,10 +5,15 @@
 <title>first</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 <body>
 <h2>게시판 목록</h2>
-<button type="button">글작성</button>
+<form action="writePostForm.do">
+	<input type="submit" value="글쓰기">
+</form>
+
 <table style="border:1px solid #ccc">
     <colgroup>
         <col width="10%"/>

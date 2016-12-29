@@ -38,5 +38,13 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int writePost(BoardVO vo) throws Exception {
 		return boardDAO.writePost(vo);
+	}
+	/*
+	 * 게시글을 수정하는 메소드
+	 * @return 수정 실패시 -1, 성공할떄 1 반환
+	 */
+	@Override
+	public int modPost(BoardVO vo) throws Exception {
+		return boardDAO.modPost(vo);
 	} 
 }

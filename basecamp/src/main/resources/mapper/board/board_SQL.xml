@@ -28,4 +28,8 @@
 	<insert id="writePost" parameterType="board.vo.BoardVO">
 		 insert into board (post_id, email, pw, text, mod_time) values (null,#{email}, #{pw}, #{text}, now())
 	</insert>
+	
+	<update id="modPost" parameterType="board.vo.BoardVO">
+		update board set text=#{text}, mod_time=now() where post_id=#{postId} and pw=#{pw}
+	</update>
 </mapper>

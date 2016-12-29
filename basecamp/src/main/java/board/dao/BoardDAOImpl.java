@@ -32,10 +32,12 @@ public class BoardDAOImpl implements BoardDAO {
 		
 	}
 
+	/*
+	 * 게시물을 수정하는 메소드
+	 */
 	@Override
-	public void modPost(BoardVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public int modPost(BoardVO vo) throws Exception {
+		return sqlSession.update("board.modPost", vo);		
 	}
 
 	/*

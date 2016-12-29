@@ -73,4 +73,19 @@ public class BoardController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping(value="/modPost.do")
+	public ModelAndView modPost(BoardVO vo){
+		//redirect to postDetail.jsp
+		ModelAndView mv = new ModelAndView("postDetail");
+		
+		int ret;
+		try {
+			ret = boardService.modPost(vo);
+			mv.addObject("ret",ret);
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + " modPost error");
+		}
+		return mv;
+	}
 }

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String postId = (String)request.getParameter("postId");
+	System.out.println(postId);
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,6 +30,7 @@
     <h2 align="center">:D</h2>
     <div class="center">
       <form method="post" action="modPost.do" class="form-horizontal" role="form" align="center">
+      	<input type="hidden" name="postId" value='<%= postId %>'/>
         <div class="form-group" align="center">
           <label class="control-label col-sm-2" for="username">이메일<em>*</em></label>
           <div class="col-sm-6">
@@ -43,10 +48,10 @@
         	<div class="col-sm-6">
         		<textarea class="form-control" rows="3" name="text">${post.text}</textarea>
         	</div>        	
-        </div>
+        </div> 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-8">
-            <input type="submit" name="post" id="submitPost" value="수정하기!" class="btn btn-default" />
+            <input type="submit" name="post" id="modifyPost" value="수정하기!" class="btn btn-default" />
            <a class="btn btn-default" href="boardList.do" role="button">목록으로</a>          
           </div>
         </div>

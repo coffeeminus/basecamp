@@ -23,4 +23,8 @@
 		order by mod_time
 		desc
 	</select>
+	
+	<insert id="writePost" parameterType="board.vo.BoardVO">
+		 insert into board (email, pw, text, mod_time) values (#{email}, #{pw}, #{text}, now())
+	</insert>
 </mapper>

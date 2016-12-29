@@ -47,9 +47,27 @@ public class BoardController {
 			System.out.println(e.getMessage() + " boardList error");
 		}		
 		return mv;
-	}	
+	}
+	
 	@RequestMapping(value="/writePostForm.do")
 	public String writePostForm(){
 		return "writePostForm";
+	}
+	
+	@RequestMapping(value="/writePost.do")
+	public ModelAndView writePost(BoardVO vo){
+		//redirect to form page 
+		ModelAndView mv = new ModelAndView("writePostForm");
+		
+		//add post to database, get the return value
+		int ret;
+		try {
+			ret = boardService.writePost(vo);
+			mv.addObject("ret", ret);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage() + " writePost error");
+		}		
+		return mv;
 	}
 }

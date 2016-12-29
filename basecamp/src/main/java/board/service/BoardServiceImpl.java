@@ -31,5 +31,12 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardVO> selectBoardList() throws Exception{		
 		return boardDAO.selectBoardList();
+	}
+	/*
+	 * 게시물을 등록하는 메소드
+	 */
+	@Override
+	public int writePost(BoardVO vo) throws Exception {
+		return boardDAO.writePost(vo);
 	} 
 }

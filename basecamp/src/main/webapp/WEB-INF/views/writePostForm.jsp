@@ -25,28 +25,29 @@
 <div class="container">
     <h2 align="center">글 작성</h2>
     <div class="center">
-      <form method="post" action="/signin" class="form-horizontal" role="form" align="center">
+      <form method="post" action="writePost.do" class="form-horizontal" role="form" align="center">
         <div class="form-group" align="center">
           <label class="control-label col-sm-2" for="username">이메일<em>*</em></label>
           <div class="col-sm-6">
-            <input type="text" name="username" id="username" placeholder="username" required="true" class="form-control" />
+            <input type="text" name="email" id="email" placeholder="이메일@도메인.com" required="true" class="form-control" />
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-2" for="password">비밀번호<em>*</em></label>
           <div class="col-sm-6">
-            <input type="password" name="password" id="password" required="true" class="form-control" />
+            <input type="password" name="pw" id="password" required="true" class="form-control" />
           </div>
         </div>
         <div class="form-group">
         	<label class="control-label col-sm-2" for="text">내용</label>
         	<div class="col-sm-6">
-        		<textarea class="form-control" rows="3"></textarea>
+        		<textarea class="form-control" rows="3" name="text"></textarea>
         	</div>        	
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-8">
-            <input type="submit" name="signin" id="signin" value="등록!" class="btn btn-default" />
+            <input type="submit" name="post" id="submitPost" value="등록!" class="btn btn-default" />
+           <a class="btn btn-default" href="boardList.do" role="button">목록으로</a>          
           </div>
         </div>
       </form>

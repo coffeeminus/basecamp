@@ -22,10 +22,13 @@ public class BoardDAOImpl implements BoardDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	/*
+	 * 게시물을 등록하는 메소드
+	 */
 	@Override
-	public void writePost(BoardVO vo) throws Exception {
-		// TODO Auto-generated method stub
+	public int writePost(BoardVO vo) throws Exception {
+		return sqlSession.insert("board.writePost", vo);
 		
 	}
 
@@ -49,5 +52,5 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public List<BoardVO> selectBoardList() throws Exception {		
 		return sqlSession.selectList("board.selectBoardList");
-	}	
+	}
 }

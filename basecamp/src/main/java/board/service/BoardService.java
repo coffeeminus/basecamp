@@ -8,4 +8,5 @@ public interface BoardService {
 
 	public BoardVO selectPost(BoardVO vo);
 	public List<BoardVO> selectBoardList() throws Exception;
+	public int writePost(BoardVO vo) throws Exception;
 }

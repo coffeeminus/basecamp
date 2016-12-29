@@ -11,7 +11,7 @@
   		<result property="modTime" column="mod_time"/>
 	</resultMap>
 	
-	<select id="selectPost" parameterType="board.vo.BoardVO" resultMap="boardVO">
+	<select id="selectPost" resultMap="boardVO">
 		select *
 		from board
 		where post_id= #{postId}	

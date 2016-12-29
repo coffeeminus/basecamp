@@ -42,8 +42,8 @@ public class BoardDAOImpl implements BoardDAO {
 	 * 선택된 게시물의 정보를 가져옴
 	 */
 	@Override
-	public BoardVO selectPost(BoardVO vo) throws Exception {		
-		return sqlSession.selectOne("board.selectPost", vo);
+	public BoardVO selectPost(String postId) throws Exception {		
+		return sqlSession.selectOne("board.selectPost", postId);
 	}
 
 	/*

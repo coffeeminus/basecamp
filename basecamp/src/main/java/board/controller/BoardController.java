@@ -24,17 +24,6 @@ public class BoardController {
 	@Resource(name="boardService")
 	private BoardService boardService;
 	
-	@RequestMapping(value="/openPost.do")
-	public ModelAndView openPost(BoardVO vo){
-		ModelAndView mv = new ModelAndView("/board/openPost");
-		
-		//get text from db using email from prev page
-		BoardVO post = boardService.selectPost(vo);
-		
-		mv.addObject("post", post);
-		return mv;
-	}
-	
 	@RequestMapping(value="/boardList.do")
 	public ModelAndView boardList(){
 		ModelAndView mv = new ModelAndView("boardList");
@@ -65,9 +54,23 @@ public class BoardController {
 			ret = boardService.writePost(vo);
 			mv.addObject("ret", ret);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			System.out.println(e.getMessage() + " writePost error");
 		}		
+		return mv;
+	}
+	
+	@RequestMapping(value="/postDetail.do")
+	public ModelAndView postDetail(String postId){
+		//get post by postId
+		ModelAndView mv = new ModelAndView("postDetail");
+		
+		BoardVO post;
+		try {
+			post = boardService.selectPost(postId);
+			mv.addObject("post", post);
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + " postDetail error");
+		}
 		return mv;
 	}
 }

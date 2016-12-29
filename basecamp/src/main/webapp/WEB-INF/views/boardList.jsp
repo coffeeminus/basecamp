@@ -36,8 +36,8 @@
                     <tr>
                     	<td>${row.postId}</td>
                         <td>${row.email }</td>
-                        <td>${row.text }</td>
-                        <td>${row.modTime }</td>
+                        <td><a href="postDetail.do?postId=${row.postId}">${row.text }</a></td>
+                        <td>${row.modTime }</td> 
                     </tr>
                 </c:forEach>
             </c:when>

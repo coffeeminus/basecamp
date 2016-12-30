@@ -46,5 +46,12 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int modPost(BoardVO vo) throws Exception {
 		return boardDAO.modPost(vo);
+	}
+	/*
+	 * 글 수정시 비밀번호 체크
+	 */
+	@Override
+	public int checkPw(BoardVO vo) throws Exception {
+		return boardDAO.checkPw(vo);
 	} 
 }

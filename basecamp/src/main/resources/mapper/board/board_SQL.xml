@@ -32,4 +32,10 @@
 	<update id="modPost" parameterType="board.vo.BoardVO">
 		update board set text=#{text}, mod_time=now() where post_id=#{postId} and pw=#{pw}
 	</update>
+	
+	<select id="checkPw" parameterType="board.vo.BoardVO" resultType="int">
+		select count(*)
+		from board
+		where post_id=#{postId} and pw=#{pw}
+	</select>
 </mapper>

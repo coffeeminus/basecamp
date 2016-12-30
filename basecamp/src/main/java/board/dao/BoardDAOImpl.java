@@ -17,12 +17,6 @@ public class BoardDAOImpl implements BoardDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	@Override
-	public List<BoardVO> listAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 	/*
 	 * 게시물을 등록하는 메소드
 	 */
@@ -54,5 +48,15 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public List<BoardVO> selectBoardList() throws Exception {		
 		return sqlSession.selectList("board.selectBoardList");
+	}
+	/*
+	 * 글 수정시 비밀번호를 확인하는 메소드
+	 * @return 매치가 없을때 0, 있을때 1
+	 */
+	@Override
+	public int checkPw(BoardVO vo) throws Exception {
+		int ret = sqlSession.selectOne("board.checkPw", vo);
+		if(ret == 0) System.out.println("no result");
+		return ret;
 	}
 }

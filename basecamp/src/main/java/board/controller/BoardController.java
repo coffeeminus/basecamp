@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import board.service.BoardService;
@@ -87,5 +88,19 @@ public class BoardController {
 			System.out.println(e.getMessage() + " modPost error");
 		}
 		return mv;
+	}
+	
+	@RequestMapping(value="/checkPw.do")
+	public @ResponseBody String checkPw(BoardVO vo){
+		
+		String ret = "";
+		try {
+			int tmp = boardService.checkPw(vo);
+			ret = String.valueOf(tmp);
+			System.out.println("ret" + ret);
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + " checkPw error");
+		}		
+		return ret;
 	}
 }

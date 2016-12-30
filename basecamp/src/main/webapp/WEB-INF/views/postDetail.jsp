@@ -25,12 +25,37 @@
   margin-right: auto;
 }
 </style>
+<script type="text/javascript">
+function checkPW(){
+	//비밀번호를 확인하는 메소드
+	var postId = <%= postId %>;
+	var pw = $("#pw").val();
+
+	//ajax 로 비밀번호 확인후 수정 submit 
+	$.ajax({
+		url: "checkPw.do",
+		type: 'POST',
+		data: 'postId=' +postId + "&pw=" + pw,
+		success: function(ret){
+			//비밀번호가 일치하지 않을때 - 0
+			if(ret == 0){
+				alert("비밀번호가 일치하지않습니다");
+				return false;
+			}
+		},
+		error: function (request, status, error) {
+            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        }
+	});	
+}
+
+</script>
 </head>
 <body>
 <div class="container">
     <h2 align="center">:D</h2>
     <div class="center">
-      <form method="post" action="modPost.do" class="form-horizontal" role="form" align="center">
+      <form method="post" action="modPost.do" class="form-horizontal" role="form" align="center" onsubmit="return checkPW()">
       	<input type="hidden" name="postId" value='<%= postId %>'/>
         <div class="form-group" align="center">
           <label class="control-label col-sm-2" for="username">이메일<em>*</em></label>
@@ -41,7 +66,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2" for="password">비밀번호<em>*</em></label>
           <div class="col-sm-6">
-            <input type="password" name="pw" id="password" required="true" class="form-control" />
+            <input type="password" name="pw" id="pw" required="true" class="form-control" />
           </div>
         </div>
         <div class="form-group">

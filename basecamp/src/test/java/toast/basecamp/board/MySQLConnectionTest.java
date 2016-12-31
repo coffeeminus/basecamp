@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import org.junit.Test;
 
 /**
- * mysql 데이터베이스 연결 상태를 테스트 하는 클래
+ * mysql 데이터베이스 연결 상태를 테스트 하는 클래스
  */
 
 public class MySQLConnectionTest {

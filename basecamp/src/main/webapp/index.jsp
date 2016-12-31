@@ -3,10 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>first</title>
+<title>첫페이지!</title>
 </head>
 <body>
-
 <a href="/board/boardList.do">게시판으로 이동!</a>
 </body>
 </html>

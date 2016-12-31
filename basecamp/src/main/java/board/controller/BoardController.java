@@ -97,7 +97,6 @@ public class BoardController {
 		try {
 			int tmp = boardService.checkPw(vo);
 			ret = String.valueOf(tmp);
-			System.out.println("ret" + ret);
 		} catch (Exception e) {
 			System.out.println(e.getMessage() + " checkPw error");
 		}		

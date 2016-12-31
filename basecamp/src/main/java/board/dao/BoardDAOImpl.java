@@ -56,7 +56,6 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public int checkPw(BoardVO vo) throws Exception {
 		int ret = sqlSession.selectOne("board.checkPw", vo);
-		if(ret == 0) System.out.println("no result");
 		return ret;
 	}
 }
